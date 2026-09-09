@@ -693,7 +693,7 @@ footer {
 /* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE */
 @media (max-width: 768px) {
   header {
-    padding: 1px 6px; /* Header ancora più sottile e piccolo */
+    padding: 1px 4px; /* Header reso molto più sottile e compatto */
     flex-direction: column;
     gap: 0px;
   }
@@ -701,22 +701,22 @@ footer {
   .logo-link {
     height: auto;
     justify-content: center;
-    margin-bottom: 0px;
+    margin-bottom: -4px; /* Avvicina il menu al logo riducendo lo spazio vuoto */
   }
 
-  /* Logo superiore ancora più grande su mobile */
+  /* Logo superiore leggermente ingrandito ma ottimizzato */
   .header-logo {
-    height: 110px;
+    height: 95px; /* Altezza bilanciata e pulita */
     position: static;
     transform: none;
-    margin-left: -4px;
+    margin-left: 0;
   }
 
   .header-icon-music {
     display: none;
   }
   
-  /* Voci del menu più piccole per scorrere meglio ed evitare ingombri */
+  /* Voci del menu più piccole e scorrevoli */
   nav {
     display: flex;
     flex-wrap: nowrap;
