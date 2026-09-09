@@ -675,7 +675,7 @@ footer {
   color: var(--primary-color);
 }
 
-/* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE (CON CAROSELLI ORIZZONTALI) */
+/* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE */
 @media (max-width: 768px) {
   header {
     padding: 6px 10px;
@@ -689,8 +689,9 @@ footer {
     margin-bottom: 2px;
   }
 
+  /* Logo ingrandito del doppio su mobile */
   .header-logo {
-    height: 55px;
+    height: 100px;
     position: static;
     transform: none;
   }
@@ -720,6 +721,11 @@ footer {
     white-space: nowrap;
   }
   
+  /* Hero rimpicciolita in altezza su mobile per vedere meglio l'immagine 16:9 */
+  .hero {
+    height: 65vh;
+  }
+
   .hero-content h2 {
     font-size: 2.1rem;
     letter-spacing: 2px;
@@ -748,11 +754,11 @@ footer {
     display: none;
   }
   .audio-card {
-    min-width: 240px;
-    flex: 0 0 240px;
+    min-width: 220px;
+    flex: 0 0 220px;
   }
 
-  /* VIDEO: Carosello orizzontale scorrevole su mobile */
+  /* VIDEO: Carosello orizzontale in formato paesaggio più corto e compatto */
   .media-grid {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -766,26 +772,53 @@ footer {
     display: none;
   }
   .video-wrapper {
-    min-width: 150px;
-    flex: 0 0 150px;
+    min-width: 210px;
+    flex: 0 0 210px;
+    height: 130px;
+    padding-bottom: 0 !important;
+  }
+  .video-wrapper video {
+    height: 100% !important;
   }
 
   .didattica-box {
     padding: 18px 20px;
   }
 
+  /* FOOTER COMPATTO SU TRE COLONNE (SINISTRA, CENTRO, DESTRA) */
+  footer {
+    padding: 10px 15px;
+  }
+
   .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+    text-align: left;
   }
 
   .footer-col {
-    text-align: center !important;
-    min-width: 100%;
+    min-width: unset !important;
+    flex: 1;
+    font-size: 0.68rem;
+    text-align: left !important;
+  }
+
+  .footer-col p {
+    font-size: 0.68rem;
+    margin: 1px 0;
   }
 
   .footer-social-link {
-    justify-content: center;
+    justify-content: flex-start;
+    font-size: 0.68rem;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+
+  .footer-col.footer-col-right {
+    text-align: right !important;
   }
 }
