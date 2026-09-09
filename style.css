@@ -675,7 +675,7 @@ footer {
   color: var(--primary-color);
 }
 
-/* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE */
+/* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE (CON CAROSELLI ORIZZONTALI) */
 @media (max-width: 768px) {
   header {
     padding: 6px 10px;
@@ -734,9 +734,40 @@ footer {
     gap: 20px;
   }
   
+  /* AUDIO: Carosello orizzontale scorrevole su mobile */
+  .audio-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+  .audio-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .audio-card {
+    min-width: 240px;
+    flex: 0 0 240px;
+  }
+
+  /* VIDEO: Carosello orizzontale scorrevole su mobile */
   .media-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+  .media-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .video-wrapper {
+    min-width: 150px;
+    flex: 0 0 150px;
   }
 
   .didattica-box {
