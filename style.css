@@ -1,7 +1,7 @@
 /* VARIABILI PER I COLORI E FONT */
 :root {
-  --primary-color: #d4af37; /* Oro elegante */
-  --bg-color: #121212;      /* Sfondo scuro principale */
+  --primary-color: #d4af37;
+  --bg-color: #121212;
   --bg-card: rgba(26, 26, 26, 0.75);
   --text-color: #f5f5f5;
   --text-muted: #aaaaaa;
@@ -12,9 +12,13 @@
 
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-/* Trama musicale globale */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: var(--font-body);
   margin: 0;
@@ -24,6 +28,7 @@ body {
   background-repeat: repeat;
   color: var(--text-color);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -35,9 +40,10 @@ h1, h2, h3 {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
-/* HEADER E MENU DI NAVIGAZIONE CON ANIMAZIONE LUMINESCENTE */
+/* HEADER E MENU DI NAVIGAZIONE */
 header {
   position: fixed;
   top: 0;
@@ -51,18 +57,8 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  box-sizing: border-box;
   border-bottom: 1px solid rgba(212, 175, 55, 0.35);
   box-shadow: 0 4px 25px rgba(212, 175, 55, 0.08);
-  overflow: visible;
-}
-
-.logo {
-  font-family: var(--font-name);
-  font-size: 2.2rem;
-  color: var(--primary-color);
-  font-weight: 400;
-  letter-spacing: 2px;
 }
 
 .logo-link {
@@ -94,6 +90,11 @@ header {
   filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 nav a {
   color: var(--text-color);
   text-decoration: none;
@@ -119,7 +120,7 @@ nav a::after {
 
 nav a:hover {
   color: var(--primary-color);
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7), 0 0 25px rgba(212, 175, 55, 0.4);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
   transform: translateY(-1px);
 }
 
@@ -150,6 +151,7 @@ nav a:hover::after {
   position: relative;
   z-index: 2;
   padding: 0 20px;
+  max-width: 100%;
 }
 
 .hero-content h2 {
@@ -254,6 +256,7 @@ section h2 {
 
 .bio-img-wrapper {
   flex: 1;
+  width: 100%;
 }
 
 .bio-img-wrapper img {
@@ -362,7 +365,6 @@ section h2 {
   width: 280px;
   height: 185px;
   padding: 0 8px;
-  box-sizing: border-box;
   flex-shrink: 0;
 }
 
@@ -465,7 +467,6 @@ section h2 {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .video-modal.active {
@@ -547,7 +548,6 @@ section h2 {
   margin-top: 15px;
 }
 
-/* ANIMAZIONI SCROLL REVEAL (FADE-IN) */
 .reveal-item {
   opacity: 0;
   transform: translateY(30px);
@@ -675,19 +675,22 @@ footer {
   color: var(--primary-color);
 }
 
+/* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE */
 @media (max-width: 768px) {
   header {
-    padding: 8px 15px;
+    padding: 6px 10px;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
 
   .logo-link {
     height: auto;
+    justify-content: center;
+    margin-bottom: 2px;
   }
 
   .header-logo {
-    height: 70px;
+    height: 55px;
     position: static;
     transform: none;
   }
@@ -698,32 +701,46 @@ footer {
   
   nav {
     display: flex;
-    gap: 8px;
+    flex-wrap: nowrap;
+    gap: 12px;
     overflow-x: auto;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
   }
   
   nav a {
     margin-left: 0;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    white-space: nowrap;
   }
   
   .hero-content h2 {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
+    letter-spacing: 2px;
   }
   
   .hero-content p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .bio-grid {
     flex-direction: column;
+    gap: 20px;
   }
   
   .media-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .didattica-box {
+    padding: 18px 20px;
   }
 
   .footer-content {
