@@ -675,10 +675,15 @@ footer {
   color: var(--primary-color);
 }
 
+.footer-gold-link {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
+
 .footer-bottom-copyright {
   text-align: center;
   font-size: 0.72rem;
-  color: #777777; /* Grigio tenue come richiesto */
+  color: #777777;
   margin-top: 10px;
   border-top: 1px solid rgba(212, 175, 55, 0.15);
   padding-top: 6px;
@@ -688,20 +693,20 @@ footer {
 /* MEDIA QUERY OTTIMIZZATA PER SMARTPHONE */
 @media (max-width: 768px) {
   header {
-    padding: 2px 8px; /* Header ancora più sottile e piccolo */
+    padding: 1px 6px; /* Header ancora più sottile e piccolo */
     flex-direction: column;
-    gap: 1px;
+    gap: 0px;
   }
 
   .logo-link {
     height: auto;
     justify-content: center;
-    margin-bottom: 1px;
+    margin-bottom: 0px;
   }
 
-  /* Logo superiore ingrandito su mobile */
+  /* Logo superiore ancora più grande su mobile */
   .header-logo {
-    height: 95px;
+    height: 110px;
     position: static;
     transform: none;
     margin-left: -4px;
@@ -711,14 +716,15 @@ footer {
     display: none;
   }
   
+  /* Voci del menu più piccole per scorrere meglio ed evitare ingombri */
   nav {
     display: flex;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 8px;
     overflow-x: auto;
     width: 100%;
     justify-content: flex-start;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -728,7 +734,7 @@ footer {
   
   nav a {
     margin-left: 0;
-    font-size: 0.68rem;
+    font-size: 0.58rem;
     white-space: nowrap;
   }
   
@@ -798,7 +804,7 @@ footer {
 
   /* FOOTER MOBILE OTTIMIZZATO */
   footer {
-    padding: 8px 10px 6px;
+    padding: 6px 10px 4px;
   }
 
   .footer-content {
@@ -806,54 +812,72 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 4px;
+    gap: 2px;
     text-align: left;
   }
 
   .footer-col {
     min-width: unset !important;
     flex: 1;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     text-align: left !important;
   }
 
   .footer-col p {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     margin: 1px 0;
   }
 
+  /* Instagram e TikTok in grassetto bianco */
   .footer-social-link {
     justify-content: flex-start;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     gap: 4px;
     margin-bottom: 2px;
+    color: #ffffff !important;
+    font-weight: bold;
   }
 
-  .footer-pec {
-    font-size: 0.6rem;
-    margin-top: 4px;
+  /* PEC in grassetto bianco */
+  .footer-pec, .footer-pec a {
+    font-size: 0.58rem;
+    margin-top: 3px;
+    color: #ffffff !important;
+    font-weight: bold;
   }
 
-  /* Spostato leggermente a destra e reso bianco brillante in grassetto */
+  /* Sezione centrale spostata a destra, bianca e in grassetto */
   .footer-col-mid {
-    padding-left: 12px;
+    padding-left: 18px;
   }
 
   .footer-col-mid p, 
   .footer-col-mid p strong, 
   .footer-col-mid p a {
     color: #ffffff !important;
-    font-weight: 600;
+    font-weight: bold;
   }
 
+  /* Privacy e Note Legali in giallo/oro grassetto (colore primario) */
   .footer-col.footer-col-right {
     text-align: right !important;
   }
 
-  .footer-bottom-copyright {
+  .footer-col-right p {
+    margin: 2px 0;
+  }
+
+  .footer-gold-link {
+    color: var(--primary-color) !important;
+    font-weight: bold;
     font-size: 0.62rem;
-    margin-top: 6px;
-    padding-top: 4px;
-    color: #777777; /* Grigio tenue */
+  }
+
+  /* Copyright in grigio tenue in basso */
+  .footer-bottom-copyright {
+    font-size: 0.58rem;
+    margin-top: 4px;
+    padding-top: 3px;
+    color: #777777;
   }
 }
